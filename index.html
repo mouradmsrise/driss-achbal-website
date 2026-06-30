@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driss ACHBAL | Président Réseau Africain Géoparcs UNESCO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #0a3d62;
+            --primary-light: #1a5276;
+            --secondary: #1e8449;
+            --secondary-light: #27ae60;
+            --accent: #c9a227;
+            --accent-light: #f0b429;
+            --dark: #1c2833;
+            --text: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg: #f4f6f9;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(10, 61, 98, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 0 5%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+        }
+
+        .nav-logo {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span { color: var(--accent-light); }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: var(--accent-light);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: white; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .lang-btn:hover { background: var(--accent-light); transform: scale(1.05); }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .nav-toggle span {
+            width: 25px; height: 2px;
+            background: white;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            min-height: 100vh;
+            background: linear-gradient(150deg, #071e38 0%, #0a3d62 35%, #0e5c32 75%, #1a7a42 100%);
+            display: flex;
+            align-items: center;
+            padding: 100px 5% 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
+            top: -200px; right: -100px;
+            border-radius: 50%;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(30,132,73,0.15) 0%, transparent 70%);
+            bottom: -100px; left: 5%;
+            border-radius: 50%;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text { color: white; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: var(--accent-light);
+            padding: 9px 20px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-name span { color: var(--accent-light); }
+
+        .hero-title {
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .hero-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+            max-width: 580px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat { text-align: left; }
+
+        .hero-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            display: block;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .hero-divider {
+            width: 1px; height: 40px;
+            background: rgba(255,255,255,0.15);
+            align-self: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(240,180,41,0.35);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255,255,255,0.35);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .hero-avatar {
+            width: 130px; height: 130px;
+            border-radius: 50%;
+            border: 4px solid rgba(240,180,41,0.7);
+            margin: 0 auto 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+        }
+
+        .hero-avatar img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-card-role {
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-card-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .hero-card-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        .hero-card-badge i {
+            color: var(--accent-light);
+            width: 16px;
+            flex-shrink: 0;
+        }
+
+        .hero-card-badge span {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 90px 5%;
+        }
+
+        .section-alt { background: white; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 0 auto 14px;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 0.97rem;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-photo-wrap {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-photo {
+            width: 110px; height: 130px;
+            min-width: 110px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 3px solid var(--secondary);
+        }
+
+        .about-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .about-photo-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .about-photo-info p {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .info-icon {
+            color: var(--secondary);
+            margin-top: 2px;
+            width: 15px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .info-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        .info-value {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .info-value a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .highlights-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+        .highlight-card {
+            background: var(--bg);
+            border-radius: 14px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .highlight-card:hover {
+            transform: translateX(6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .highlight-card.blue { border-left-color: var(--primary-light); }
+        .highlight-card.gold { border-left-color: var(--accent); }
+
+        .highlight-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+
+        .highlight-title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+
+        .highlight-text {
+            font-size: 0.83rem;
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+
+        /* ===== TIMELINE ===== */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 13px;
+            top: 8px; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--secondary), var(--primary), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -29px;
+            top: 7px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover .timeline-dot { transform: scale(1.3); }
+
+        .timeline-dot.accent { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+        .timeline-dot.blue { background: var(--primary-light); box-shadow: 0 0 0 2px var(--primary-light); }
+
+        .timeline-date {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 3px;
+        }
+
+        .timeline-role {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .timeline-org {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary-light);
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .timeline-tags { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+        .t-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .t-tag.green { background: rgba(30,132,73,0.1); color: var(--secondary); }
+        .t-tag.blue { background: rgba(10,61,98,0.08); color: var(--primary); }
+        .t-tag.gold { background: rgba(201,162,39,0.12); color: var(--accent); }
+
+        /* ===== EXPERTISE ===== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .expertise-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            text-align: center;
+            transition: all 0.35s;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            transform: scaleX(0);
+            transition: transform 0.35s;
+        }
+
+        .expertise-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(0,0,0,0.1); }
+        .expertise-card:hover::before { transform: scaleX(1); }
+
+        .expertise-icon {
+            width: 65px; height: 65px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.65rem;
+            margin: 0 auto 1.2rem;
+        }
+
+        .expertise-icon.blue { background: rgba(10,61,98,0.07); color: var(--primary); }
+        .expertise-icon.green { background: rgba(30,132,73,0.08); color: var(--secondary); }
+        .expertise-icon.gold { background: rgba(201,162,39,0.1); color: var(--accent); }
+        .expertise-icon.teal { background: rgba(8,145,178,0.08); color: #0891b2; }
+        .expertise-icon.purple { background: rgba(107,70,193,0.08); color: #6b46c1; }
+        .expertise-icon.rose { background: rgba(190,24,93,0.07); color: #be185d; }
+
+        .expertise-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+
+        .expertise-text {
+            font-size: 0.83rem;
+            color: var(--text-light);
+            line-height: 1.72;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .skills-group h4 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+        .skill-tag {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.25s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .soft-skills-row {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .soft-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        /* ===== LANGUAGES ===== */
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .lang-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .lang-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(30,132,73,0.12);
+        }
+
+        .lang-flag { font-size: 2.2rem; margin-bottom: 0.6rem; line-height: 1; }
+
+        .lang-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.92rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .lang-level { font-size: 0.75rem; color: var(--text-light); margin-bottom: 0.75rem; }
+
+        .lang-dots { display: flex; justify-content: center; gap: 5px; }
+
+        .lang-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .lang-dot.filled { background: var(--secondary); }
+
+        /* ===== ASSOCIATIONS ===== */
+        .assoc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .assoc-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+
+        .assoc-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            transform: translateY(-4px);
+            border-color: rgba(30,132,73,0.2);
+        }
+
+        .assoc-icon {
+            width: 42px; height: 42px;
+            min-width: 42px;
+            border-radius: 10px;
+            background: rgba(30,132,73,0.08);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .assoc-role {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .assoc-org {
+            font-size: 0.78rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 3px;
+            line-height: 1.3;
+        }
+
+        .assoc-date { font-size: 0.72rem; color: var(--text-light); }
+
+        /* ===== KEY ACHIEVEMENT ===== */
+        .achievement-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #0e5c32 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-banner::before {
+            content: '';
+            position: absolute;
+            right: -50px; top: -50px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+
+        .achievement-icon-big {
+            width: 80px; height: 80px;
+            min-width: 80px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .achievement-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            line-height: 1;
+            margin-right: 1rem;
+        }
+
+        .achievement-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .achievement-desc {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.65;
+        }
+
+        /* ===== CONTACT ===== */
+        #contact {
+            background: linear-gradient(150deg, #071e38 0%, #0a3d62 45%, #0e5c32 100%);
+            padding: 90px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        #contact .section-tag { color: var(--accent-light); }
+        #contact .section-title { color: white; }
+        #contact .section-subtitle { color: rgba(255,255,255,0.65); }
+        #contact .section-line { background: linear-gradient(to right, rgba(255,255,255,0.4), rgba(255,255,255,0.15)); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info { color: white; }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .c-icon {
+            width: 46px; height: 46px;
+            min-width: 46px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--accent-light);
+        }
+
+        .c-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 3px;
+        }
+
+        .c-value {
+            font-weight: 600;
+            color: white;
+            font-size: 0.92rem;
+        }
+
+        .c-value a { color: white; text-decoration: none; }
+        .c-value a:hover { color: var(--accent-light); }
+
+        .contact-form-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+
+        .contact-form-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .form-group { margin-bottom: 1.1rem; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            color: var(--text);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+            background: var(--bg);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(30,132,73,0.08);
+            background: white;
+        }
+
+        .form-group textarea { height: 110px; resize: vertical; }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(10,61,98,0.35);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.82rem;
+        }
+
+        footer strong { color: rgba(255,255,255,0.8); }
+        footer a { color: var(--accent-light); text-decoration: none; }
+
+        /* ===== GALLERY ===== */
+        #gallery { background: var(--dark); padding: 90px 5%; }
+
+        #gallery .section-tag { color: var(--accent-light); }
+        #gallery .section-title { color: white; }
+        #gallery .section-line { background: linear-gradient(to right, rgba(255,255,255,0.4), rgba(255,255,255,0.1)); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+            aspect-ratio: 4/3;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .gallery-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.88);
+            display: block;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.6);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,61,98,0.92) 0%, transparent 55%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-overlay-hover {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-card:hover .gallery-overlay-hover {
+            opacity: 1;
+        }
+
+        .gallery-zoom-icon {
+            width: 54px; height: 54px;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            width: fit-content;
+        }
+
+        .gallery-tag.gold { background: var(--accent); }
+
+        .gallery-caption {
+            color: white;
+            font-size: 0.88rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .gallery-subcaption {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.75rem;
+            margin-top: 3px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            backdrop-filter: blur(6px);
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            border-radius: 12px;
+            object-fit: contain;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%; transform: translateX(-50%);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.88rem;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ===== SCROLL TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 46px; height: 46px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            box-shadow: 0 6px 20px rgba(30,132,73,0.35);
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top.visible { opacity: 1; transform: translateY(0); }
+        .scroll-top:hover { background: var(--primary); }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .fade-in:nth-child(2) { transition-delay: 0.1s; }
+        .fade-in:nth-child(3) { transition-delay: 0.2s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-visual { display: none; }
+            .hero-stats { justify-content: center; }
+            .hero-buttons { justify-content: center; }
+            .hero-title { border-left: none; padding-left: 0; border-top: 3px solid var(--accent); padding-top: 0.75rem; }
+            .hero-desc { margin: 0 auto 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .exp-grid { grid-template-columns: 1fr; }
+            .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-wrapper { grid-template-columns: 1fr 1fr; }
+            .lang-grid { grid-template-columns: repeat(2, 1fr); }
+            .assoc-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .achievement-banner { flex-direction: column; text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px; left: 0; right: 0;
+                background: var(--primary);
+                padding: 1.5rem 5%;
+                gap: 1.2rem;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+            .nav-toggle { display: flex; }
+            .form-row { grid-template-columns: 1fr; }
+            .skills-wrapper { grid-template-columns: 1fr; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .assoc-grid { grid-template-columns: 1fr; }
+            .about-info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+    <a href="#hero" class="nav-logo">Driss <span>ACHBAL</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+        <li><a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a></li>
+        <li><a href="#education" data-fr="Formation" data-en="Education">Formation</a></li>
+        <li><a href="#expertise" data-fr="Expertise" data-en="Expertise">Expertise</a></li>
+        <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+        <li><a href="#associations" data-fr="Associations" data-en="Associations">Associations</a></li>
+        <li><a href="#gallery" data-fr="Galerie" data-en="Gallery">Galerie</a></li>
+        <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+        <li><button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <div class="hero-badge">
+                <i class="fas fa-globe-africa"></i>
+                <span data-fr="Réseau Mondial des Géoparcs UNESCO" data-en="UNESCO Global Geoparks Network">Réseau Mondial des Géoparcs UNESCO</span>
+            </div>
+            <h1 class="hero-name">Driss <span>ACHBAL</span></h1>
+            <p class="hero-title">
+                <span data-fr="Président du Réseau Africain des Géoparcs UNESCO<br>Directeur Général des Services — Région Béni Mellal-Khénifra" data-en="President of the African UNESCO Global Geoparks Network<br>General Director of Services — Béni Mellal-Khénifra Region">
+                    Président du Réseau Africain des Géoparcs UNESCO<br>
+                    Directeur Général des Services — Région Béni Mellal-Khénifra
+                </span>
+            </p>
+            <p class="hero-desc" data-fr="Expert en gestion des géoparcs, développement durable et aménagement du territoire avec plus de 25 ans d'expérience au service des collectivités territoriales marocaines et des institutions internationales." data-en="Expert in geopark management, sustainable development and spatial planning with over 25 years of experience serving Moroccan local authorities and international institutions.">
+                Expert en gestion des géoparcs, développement durable et aménagement du territoire avec plus de 25 ans d'expérience au service des collectivités territoriales marocaines et des institutions internationales.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num">25+</span>
+                    <span class="hero-stat-label" data-fr="Années d'expérience" data-en="Years of experience">Années d'expérience</span>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">4</span>
+                    <span class="hero-stat-label" data-fr="Langues maîtrisées" data-en="Languages spoken">Langues maîtrisées</span>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">2023</span>
+                    <span class="hero-stat-label" data-fr="Conf. Intl. Marrakech" data-en="Intl. Conf. Marrakech">Conf. Intl. Marrakech</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    <span data-fr="Me contacter" data-en="Contact me">Me contacter</span>
+                </a>
+                <a href="#experience" class="btn-outline">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-fr="Mon parcours" data-en="My experience">Mon parcours</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-avatar">
+                    <img src="DrissImage.png" alt="Driss ACHBAL">
+                </div>
+                <div class="hero-card-name">Driss ACHBAL</div>
+                <div class="hero-card-role" data-fr="Expert UNESCO Géoparcs" data-en="UNESCO Geoparks Expert">Expert UNESCO Géoparcs</div>
+                <div class="hero-card-badges">
+                    <div class="hero-card-badge">
+                        <i class="fas fa-award"></i>
+                        <span data-fr="Évaluateur Géoparcs Mondiaux UNESCO" data-en="UNESCO Global Geoparks Evaluator">Évaluateur Géoparcs Mondiaux UNESCO</span>
+                    </div>
+                    <div class="hero-card-badge">
+                        <i class="fas fa-users"></i>
+                        <span data-fr="Membre Commission Nationale UNESCO" data-en="Member National UNESCO Commission">Membre Commission Nationale UNESCO</span>
+                    </div>
+                    <div class="hero-card-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Béni Mellal, Maroc</span>
+                    </div>
+                    <div class="hero-card-badge">
+                        <i class="fas fa-globe"></i>
+                        <span>geoparc-mgoun.ma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Qui suis-je" data-en="Who I am">Qui suis-je</span>
+            <h2 class="section-title" data-fr="À Propos de Moi" data-en="About Me">À Propos de Moi</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle" data-fr="Acteur engagé pour le développement durable et la valorisation du patrimoine géologique mondial" data-en="A committed actor for sustainable development and the enhancement of global geological heritage">
+                Acteur engagé pour le développement durable et la valorisation du patrimoine géologique mondial
+            </p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text fade-in">
+                <div class="about-photo-wrap">
+                    <div class="about-photo">
+                        <img src="driss3.jpeg" alt="Driss ACHBAL — Réunion officielle UNESCO">
+                    </div>
+                    <div class="about-photo-info">
+                        <h3 data-fr="Driss ACHBAL" data-en="Driss ACHBAL">Driss ACHBAL</h3>
+                        <p data-fr="Président du Réseau Africain<br>des Géoparcs UNESCO<br>Directeur Général des Services<br>Région Béni Mellal-Khénifra" data-en="President of the African<br>UNESCO Geoparks Network<br>General Director of Services<br>Béni Mellal-Khénifra Region">Président du Réseau Africain<br>des Géoparcs UNESCO<br>Directeur Général des Services<br>Région Béni Mellal-Khénifra</p>
+                    </div>
+                </div>
+                <p data-fr="Haut fonctionnaire marocain et leader international dans le domaine des Géoparcs UNESCO, M. Driss ACHBAL possède une expertise de premier plan en gestion territoriale, conservation du patrimoine naturel et développement durable." data-en="A senior Moroccan official and international leader in the field of UNESCO Geoparks, Mr. Driss ACHBAL has leading expertise in territorial management, natural heritage conservation and sustainable development.">
+                    Haut fonctionnaire marocain et leader international dans le domaine des Géoparcs UNESCO, M. Driss ACHBAL possède une expertise de premier plan en gestion territoriale, conservation du patrimoine naturel et développement durable.
+                </p>
+                <p data-fr="Président du Réseau Africain des Géoparcs UNESCO depuis 2020 et Directeur Général des Services de la Région Béni Mellal-Khénifra depuis 2017, il œuvre pour l'essor des géoparcs africains et pour un aménagement du territoire au service des communautés locales." data-en="President of the African UNESCO Geoparks Network since 2020 and General Director of Services for the Béni Mellal-Khénifra Region since 2017, he works for the development of African geoparks and for spatial planning in service of local communities.">
+                    Président du Réseau Africain des Géoparcs UNESCO depuis 2020 et Directeur Général des Services de la Région Béni Mellal-Khénifra depuis 2017, il œuvre pour l'essor des géoparcs africains et pour un aménagement du territoire au service des communautés locales.
+                </p>
+                <p data-fr="En 2023, il a couronné son engagement en organisant la 10ème Conférence Internationale sur les Géoparcs Mondiaux UNESCO à Marrakech — un événement majeur réunissant des experts du patrimoine géologique du monde entier." data-en="In 2023, he crowned his commitment by organizing the 10th International Conference on UNESCO Global Geoparks in Marrakech — a major event bringing together geological heritage experts from around the world.">
+                    En 2023, il a couronné son engagement en organisant la 10ème Conférence Internationale sur les Géoparcs Mondiaux UNESCO à Marrakech — un événement majeur réunissant des experts du patrimoine géologique du monde entier.
+                </p>
+                <div class="about-info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt info-icon"></i>
+                        <div>
+                            <span class="info-label" data-fr="Localisation" data-en="Location">Localisation</span>
+                            <span class="info-value">Béni Mellal, Maroc</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope info-icon"></i>
+                        <div>
+                            <span class="info-label">Email</span>
+                            <span class="info-value"><a href="mailto:dgs.rbk@gmail.com">dgs.rbk@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone info-icon"></i>
+                        <div>
+                            <span class="info-label" data-fr="Téléphone" data-en="Phone">Téléphone</span>
+                            <span class="info-value">+212 661 065920</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-globe info-icon"></i>
+                        <div>
+                            <span class="info-label">Site web</span>
+                            <span class="info-value"><a href="https://www.geoparc-mgoun.ma" target="_blank">geoparc-mgoun.ma</a></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar info-icon"></i>
+                        <div>
+                            <span class="info-label" data-fr="Naissance" data-en="Birth">Naissance</span>
+                            <span class="info-value">28 Août 1970</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-flag info-icon"></i>
+                        <div>
+                            <span class="info-label" data-fr="Nationalité" data-en="Nationality">Nationalité</span>
+                            <span class="info-value" data-fr="Marocaine" data-en="Moroccan">Marocaine</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="highlights-col fade-in">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌍</div>
+                    <div class="highlight-title" data-fr="Réseau Africain des Géoparcs UNESCO" data-en="African UNESCO Geoparks Network">Réseau Africain des Géoparcs UNESCO</div>
+                    <div class="highlight-text" data-fr="Président depuis 2020, coordinant les actions de conservation et de développement durable à travers le continent africain au sein du réseau mondial GGN." data-en="President since 2020, coordinating conservation and sustainable development actions across the African continent within the global GGN network.">Président depuis 2020, coordinant les actions de conservation et de développement durable à travers le continent africain au sein du réseau mondial GGN.</div>
+                </div>
+                <div class="highlight-card blue">
+                    <div class="highlight-icon">🏛️</div>
+                    <div class="highlight-title" data-fr="10ème Conférence Internationale UNESCO" data-en="10th UNESCO International Conference">10ème Conférence Internationale UNESCO</div>
+                    <div class="highlight-text" data-fr="Organisateur principal de la 10ème Conférence Internationale sur les Géoparcs Mondiaux UNESCO à Marrakech, du 4 au 10 Septembre 2023." data-en="Lead organizer of the 10th International Conference on UNESCO Global Geoparks in Marrakech, September 4–10, 2023.">Organisateur principal de la 10ème Conférence Internationale sur les Géoparcs Mondiaux UNESCO à Marrakech, du 4 au 10 Septembre 2023.</div>
+                </div>
+                <div class="highlight-card gold">
+                    <div class="highlight-icon">⭐</div>
+                    <div class="highlight-title" data-fr="Évaluateur Officiel UNESCO" data-en="Official UNESCO Evaluator">Évaluateur Officiel UNESCO</div>
+                    <div class="highlight-text" data-fr="Évaluateur accrédité des candidatures aux labels Géoparcs Mondiaux UNESCO, contribuant à la reconnaissance internationale du patrimoine géologique." data-en="Accredited evaluator of UNESCO Global Geoparks label candidatures, contributing to the international recognition of geological heritage.">Évaluateur accrédité des candidatures aux labels Géoparcs Mondiaux UNESCO, contribuant à la reconnaissance internationale du patrimoine géologique.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Parcours professionnel" data-en="Career path">Parcours professionnel</span>
+            <h2 class="section-title" data-fr="Expérience Professionnelle" data-en="Professional Experience">Expérience Professionnelle</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="exp-grid">
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-date">2020 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Président — Réseau Africain des Géoparcs UNESCO" data-en="President — African UNESCO Geoparks Network">Président — Réseau Africain des Géoparcs UNESCO</div>
+                    <div class="timeline-org">UNESCO Global Geoparks Network (GGN)</div>
+                    <div class="timeline-desc" data-fr="Leadership du réseau africain des géoparcs UNESCO, coordination des activités de conservation, promotion du développement durable et valorisation du patrimoine géologique et culturel à l'échelle africaine." data-en="Leadership of the African UNESCO geoparks network, coordination of conservation activities, promotion of sustainable development and valorization of geological and cultural heritage at an African scale.">Leadership du réseau africain des géoparcs UNESCO, coordination des activités de conservation, promotion du développement durable et valorisation du patrimoine géologique et culturel à l'échelle africaine.</div>
+                    <div class="timeline-tags">
+                        <span class="t-tag gold">International</span>
+                        <span class="t-tag green">UNESCO</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot blue"></div>
+                    <div class="timeline-date">2023 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Membre — Commission Nationale UNESCO Maroc" data-en="Member — National UNESCO Commission Morocco">Membre — Commission Nationale UNESCO Maroc</div>
+                    <div class="timeline-org">UNESCO Maroc</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot blue"></div>
+                    <div class="timeline-date">2023 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Vice-Président — Commission Nat. Marocaine Géoparcs UNESCO" data-en="Vice-President — Moroccan National Commission for UNESCO Geoparks">Vice-Président — Commission Nat. Marocaine Géoparcs UNESCO</div>
+                    <div class="timeline-org">Maroc</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-date">2022 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Évaluateur — Géoparcs Mondiaux UNESCO" data-en="Evaluator — UNESCO Global Geoparks">Évaluateur — Géoparcs Mondiaux UNESCO</div>
+                    <div class="timeline-org">UNESCO</div>
+                    <div class="timeline-tags"><span class="t-tag gold">UNESCO</span></div>
+                </div>
+            </div>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Directeur Général des Services" data-en="General Director of Services">Directeur Général des Services</div>
+                    <div class="timeline-org" data-fr="Région Béni Mellal-Khénifra, Maroc" data-en="Béni Mellal-Khénifra Region, Morocco">Région Béni Mellal-Khénifra, Maroc</div>
+                    <div class="timeline-desc" data-fr="Direction et coordination des services régionaux, gestion administrative et financière, supervision des ressources humaines et pilotage de projets de développement territorial." data-en="Direction and coordination of regional services, administrative and financial management, human resources supervision and steering of territorial development projects.">Direction et coordination des services régionaux, gestion administrative et financière, supervision des ressources humaines et pilotage de projets de développement territorial.</div>
+                    <div class="timeline-tags"><span class="t-tag blue">Administration</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2019 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Président — Association Géoparc M'Goun" data-en="President — M'Goun Geopark Association">Président — Association Géoparc M'Goun</div>
+                    <div class="timeline-org">Azilal, Maroc</div>
+                    <div class="timeline-tags"><span class="t-tag green">Associatif</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2001 — 2016</div>
+                    <div class="timeline-role" data-fr="Secrétaire Général des Collectivités Territoriales" data-en="Secretary General of Local Authorities">Secrétaire Général des Collectivités Territoriales</div>
+                    <div class="timeline-org">Skhirat, Rabat</div>
+                    <div class="timeline-desc" data-fr="15 ans au service des collectivités territoriales : administration locale, gestion des ressources, développement communautaire et gouvernance territoriale." data-en="15 years serving local authorities: local administration, resource management, community development and territorial governance.">15 ans au service des collectivités territoriales : administration locale, gestion des ressources, développement communautaire et gouvernance territoriale.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1996 — 2000</div>
+                    <div class="timeline-role" data-fr="Régisseur des Dépenses / Recettes" data-en="Expenses / Revenue Manager">Régisseur des Dépenses / Recettes</div>
+                    <div class="timeline-org" data-fr="Collectivité Territoriale, Maroc" data-en="Local Authority, Morocco">Collectivité Territoriale, Maroc</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Achievement Banner -->
+        <div class="achievement-banner fade-in">
+            <div class="achievement-icon-big">🏆</div>
+            <div class="achievement-year">2023</div>
+            <div>
+                <div class="achievement-title" data-fr="10ème Conférence Internationale — Géoparcs Mondiaux UNESCO" data-en="10th International Conference — UNESCO Global Geoparks">10ème Conférence Internationale — Géoparcs Mondiaux UNESCO</div>
+                <div class="achievement-desc" data-fr="Organisateur principal de la conférence mondiale des géoparcs UNESCO à Marrakech, Maroc — 4 au 10 Septembre 2023. Événement réunissant des experts en patrimoine géologique, environnement et développement durable du monde entier." data-en="Lead organizer of the UNESCO global geoparks world conference in Marrakech, Morocco — September 4–10, 2023. Event bringing together experts in geological heritage, environment and sustainable development from around the world.">Organisateur principal de la conférence mondiale des géoparcs UNESCO à Marrakech, Maroc — 4 au 10 Septembre 2023. Événement réunissant des experts en patrimoine géologique, environnement et développement durable du monde entier.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education" class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Parcours académique" data-en="Academic background">Parcours académique</span>
+            <h2 class="section-title" data-fr="Formation & Diplômes" data-en="Education & Degrees">Formation & Diplômes</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="exp-grid">
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-date">2020 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                    <div class="timeline-role" data-fr="Doctorat (en cours)" data-en="PhD Student (ongoing)">Doctorat (en cours)</div>
+                    <div class="timeline-org" data-fr="Faculté des Lettres et Sciences Humaines — Béni Mellal" data-en="Faculty of Letters and Human Sciences — Béni Mellal">Faculté des Lettres et Sciences Humaines — Béni Mellal</div>
+                    <div class="timeline-tags"><span class="t-tag gold">PhD</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017</div>
+                    <div class="timeline-role" data-fr="Certificat de Spécialité ENA" data-en="ENA Specialty Certificate">Certificat de Spécialité ENA</div>
+                    <div class="timeline-org" data-fr="École Nationale d'Administration — Paris, France" data-en="National School of Administration — Paris, France">École Nationale d'Administration — Paris, France</div>
+                    <div class="timeline-tags"><span class="t-tag blue">Paris, France</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot accent"></div>
+                    <div class="timeline-date">2004 — 2006</div>
+                    <div class="timeline-role" data-fr="DESS — Gestion des Ressources Naturelles, Protection de l'Environnement et Développement Durable" data-en="DESS — Natural Resources Management, Environmental Protection and Sustainable Development">DESS — Gestion des Ressources Naturelles, Protection de l'Environnement et Développement Durable</div>
+                    <div class="timeline-org" data-fr="Université Mohamed V Agdal, Rabat — Chaire UNESCO" data-en="Mohammed V Agdal University, Rabat — UNESCO Chair">Université Mohamed V Agdal, Rabat — Chaire UNESCO</div>
+                    <div class="timeline-tags"><span class="t-tag gold">UNESCO Chair</span></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2000 — 2001</div>
+                    <div class="timeline-role" data-fr="Diplôme Secrétaire Général des Communes" data-en="General Secretary Diploma of Municipalities">Diplôme Secrétaire Général des Communes</div>
+                    <div class="timeline-org" data-fr="Ministère de l'Intérieur — Rabat" data-en="Ministry of the Interior — Rabat">Ministère de l'Intérieur — Rabat</div>
+                </div>
+            </div>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1994 — 1995</div>
+                    <div class="timeline-role" data-fr="DEA — Aménagement du Territoire" data-en="DEA — Spatial Planning">DEA — Aménagement du Territoire</div>
+                    <div class="timeline-org" data-fr="Université Sidi Mohamed Ben Abdallah — Fès" data-en="Sidi Mohammed Ben Abdallah University — Fès">Université Sidi Mohamed Ben Abdallah — Fès</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1994 — 1996</div>
+                    <div class="timeline-role" data-fr="Diplôme Rédacteur Administratif — Fiscalité Locale" data-en="Administrative Writer Diploma — Local Tax">Diplôme Rédacteur Administratif — Fiscalité Locale</div>
+                    <div class="timeline-org">CFA — Oujda</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1993 — 1994</div>
+                    <div class="timeline-role" data-fr="Licence en Sciences Économiques" data-en="Degree in Economics">Licence en Sciences Économiques</div>
+                    <div class="timeline-org" data-fr="Université Mohamed I — Oujda" data-en="Mohamed I University — Oujda">Université Mohamed I — Oujda</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1992</div>
+                    <div class="timeline-role" data-fr="Licence en Géomorphologie" data-en="Degree in Geomorphology">Licence en Géomorphologie</div>
+                    <div class="timeline-org" data-fr="Université Mohamed I — Oujda" data-en="Mohamed I University — Oujda">Université Mohamed I — Oujda</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1990</div>
+                    <div class="timeline-role" data-fr="Baccalauréat — Lettres et Sciences Humaines" data-en="Bachelor — Arts and Humanities">Baccalauréat — Lettres et Sciences Humaines</div>
+                    <div class="timeline-org" data-fr="Lycée Ben Tejit" data-en="Ben Tejit High School">Lycée Ben Tejit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== EXPERTISE ===== -->
+<section id="expertise" class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Domaines de spécialité" data-en="Areas of specialty">Domaines de spécialité</span>
+            <h2 class="section-title" data-fr="Expertise & Spécialités" data-en="Expertise & Specialties">Expertise & Spécialités</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle" data-fr="Une expertise pluridisciplinaire au carrefour de la géologie, du droit, de l'environnement et du management territorial" data-en="Multidisciplinary expertise at the crossroads of geology, law, environment and territorial management">
+                Une expertise pluridisciplinaire au carrefour de la géologie, du droit, de l'environnement et du management territorial
+            </p>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon green"><i class="fas fa-mountain"></i></div>
+                <div class="expertise-title" data-fr="Gestion des Géoparcs UNESCO" data-en="UNESCO Geopark Management">Gestion des Géoparcs UNESCO</div>
+                <div class="expertise-text" data-fr="Expertise en gestion, conservation et valorisation des géoparcs. Maîtrise des principes des Géoparcs Mondiaux UNESCO : développement durable, implication communautaire et intégration du patrimoine." data-en="Expertise in management, conservation and enhancement of geoparks. Mastery of UNESCO Global Geoparks principles: sustainable development, community involvement and heritage integration.">Expertise en gestion, conservation et valorisation des géoparcs. Maîtrise des principes des Géoparcs Mondiaux UNESCO : développement durable, implication communautaire et intégration du patrimoine.</div>
+            </div>
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon blue"><i class="fas fa-leaf"></i></div>
+                <div class="expertise-title" data-fr="Développement Durable" data-en="Sustainable Development">Développement Durable</div>
+                <div class="expertise-text" data-fr="Diagnostic et évaluation des ressources naturelles, planification stratégique et spatiale, études socio-économiques et élaboration de plans de développement (SRAT, PDR, PAC, PDP)." data-en="Diagnosis and evaluation of natural resources, strategic and spatial planning, socio-economic studies and development plan development (SRAT, PDR, PAC, PDP).">Diagnostic et évaluation des ressources naturelles, planification stratégique et spatiale, études socio-économiques et élaboration de plans de développement (SRAT, PDR, PAC, PDP).</div>
+            </div>
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon gold"><i class="fas fa-landmark"></i></div>
+                <div class="expertise-title" data-fr="Aménagement du Territoire" data-en="Spatial Planning">Aménagement du Territoire</div>
+                <div class="expertise-text" data-fr="Gouvernance territoriale décentralisée, gestion de l'espace, coordination des politiques d'aménagement régionales et locales." data-en="Decentralized territorial governance, space management, coordination of regional and local planning policies.">Gouvernance territoriale décentralisée, gestion de l'espace, coordination des politiques d'aménagement régionales et locales.</div>
+            </div>
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon teal"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="expertise-title" data-fr="SIG & Analyse Spatiale" data-en="GIS & Spatial Analysis">SIG & Analyse Spatiale</div>
+                <div class="expertise-text" data-fr="Analyse de photographies aériennes, cartographie informatique, maîtrise des outils SIG (ArcGIS, QGIS, MapInfo, ArcView) et traitement statistique de données géographiques." data-en="Aerial photo analysis, computer mapping, mastery of GIS tools (ArcGIS, QGIS, MapInfo, ArcView) and statistical processing of geographical data.">Analyse de photographies aériennes, cartographie informatique, maîtrise des outils SIG (ArcGIS, QGIS, MapInfo, ArcView) et traitement statistique de données géographiques.</div>
+            </div>
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon purple"><i class="fas fa-coins"></i></div>
+                <div class="expertise-title" data-fr="Gestion Financière & Administrative" data-en="Financial & Administrative Management">Gestion Financière & Administrative</div>
+                <div class="expertise-text" data-fr="Préparation budgétaire, comptes administratifs et spéciaux, gestion des ressources humaines, résolution de conflits administratifs et techniques." data-en="Budget preparation, administrative and special accounts, human resources management, resolution of administrative and technical conflicts.">Préparation budgétaire, comptes administratifs et spéciaux, gestion des ressources humaines, résolution de conflits administratifs et techniques.</div>
+            </div>
+            <div class="expertise-card fade-in">
+                <div class="expertise-icon rose"><i class="fas fa-users"></i></div>
+                <div class="expertise-title" data-fr="Approches Participatives" data-en="Participatory Approaches">Approches Participatives</div>
+                <div class="expertise-text" data-fr="Maîtrise des approches participatives (MARP, DIAGRAP), genre et territorial. Réalisation d'enquêtes, diagnostics participatifs et animation de tables rondes et interviews médias." data-en="Mastery of participatory approaches (MARP, DIAGRAP), gender and territorial. Conducting surveys, participatory diagnostics and leading round tables and media interviews.">Maîtrise des approches participatives (MARP, DIAGRAP), genre et territorial. Réalisation d'enquêtes, diagnostics participatifs et animation de tables rondes et interviews médias.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Outils & Compétences" data-en="Tools & Skills">Outils & Compétences</span>
+            <h2 class="section-title" data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-wrapper fade-in">
+            <div class="skills-group">
+                <h4 data-fr="Outils SIG" data-en="GIS Tools">Outils SIG</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">ArcGIS</span>
+                    <span class="skill-tag">QGIS</span>
+                    <span class="skill-tag">MapInfo</span>
+                    <span class="skill-tag">ArcView</span>
+                    <span class="skill-tag">Vertical Mapper</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h4 data-fr="Bureautique" data-en="Office Tools">Bureautique</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Microsoft Word</span>
+                    <span class="skill-tag">Excel</span>
+                    <span class="skill-tag">PowerPoint</span>
+                    <span class="skill-tag">Access</span>
+                </div>
+            </div>
+            <div class="skills-group">
+                <h4 data-fr="Design & Édition" data-en="Design & Editing">Design & Édition</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Adobe Illustrator</span>
+                    <span class="skill-tag">Canva</span>
+                </div>
+            </div>
+        </div>
+        <div class="soft-skills-row fade-in">
+            <div class="soft-title" data-fr="Compétences Managériales & Transversales" data-en="Management & Transversal Skills">Compétences Managériales & Transversales</div>
+            <div class="skill-tags">
+                <span class="skill-tag" data-fr="Leadership" data-en="Leadership">Leadership</span>
+                <span class="skill-tag" data-fr="Négociation" data-en="Negotiation">Négociation</span>
+                <span class="skill-tag" data-fr="Gestion de projet" data-en="Project management">Gestion de projet</span>
+                <span class="skill-tag" data-fr="Prise de décision" data-en="Decision making">Prise de décision</span>
+                <span class="skill-tag" data-fr="Communication" data-en="Communication">Communication</span>
+                <span class="skill-tag" data-fr="Benchmarking" data-en="Benchmarking">Benchmarking</span>
+                <span class="skill-tag" data-fr="Coordination" data-en="Coordination">Coordination</span>
+                <span class="skill-tag" data-fr="Gestion des conflits" data-en="Conflict resolution">Gestion des conflits</span>
+                <span class="skill-tag" data-fr="Supervision RH" data-en="HR supervision">Supervision RH</span>
+                <span class="skill-tag" data-fr="Interviews médias" data-en="Media interviews">Interviews médias</span>
+                <span class="skill-tag" data-fr="Élaboration de stratégies" data-en="Strategy development">Élaboration de stratégies</span>
+                <span class="skill-tag" data-fr="Pilotage budgétaire" data-en="Budget steering">Pilotage budgétaire</span>
+                <span class="skill-tag" data-fr="Recrutement" data-en="Recruitment">Recrutement</span>
+                <span class="skill-tag" data-fr="Plaidoyer" data-en="Advocacy">Plaidoyer</span>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="fade-in" style="margin-top: 4rem;">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag" data-fr="Communication internationale" data-en="International communication">Communication internationale</span>
+                <h3 class="section-title" data-fr="Langues" data-en="Languages">Langues</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="lang-grid">
+                <div class="lang-card">
+                    <div class="lang-flag">🇲🇦</div>
+                    <div class="lang-name">Amazighe</div>
+                    <div class="lang-level" data-fr="Oral" data-en="Spoken">Oral</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot"></div>
+                        <div class="lang-dot"></div>
+                    </div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-flag">🇸🇦</div>
+                    <div class="lang-name">Arabe</div>
+                    <div class="lang-level" data-fr="Lu, écrit, parlé" data-en="Read, written, spoken">Lu, écrit, parlé</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                    </div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-flag">🇫🇷</div>
+                    <div class="lang-name">Français</div>
+                    <div class="lang-level" data-fr="Lu, écrit, parlé" data-en="Read, written, spoken">Lu, écrit, parlé</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                    </div>
+                </div>
+                <div class="lang-card">
+                    <div class="lang-flag">🇬🇧</div>
+                    <div class="lang-name">English</div>
+                    <div class="lang-level" data-fr="Lu, écrit, parlé" data-en="Read, written, spoken">Lu, écrit, parlé</div>
+                    <div class="lang-dots">
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot filled"></div>
+                        <div class="lang-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ASSOCIATIONS ===== -->
+<section id="associations" class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Engagement & Réseaux" data-en="Engagement & Networks">Engagement & Réseaux</span>
+            <h2 class="section-title" data-fr="Associations & Réseaux" data-en="Associations & Networks">Associations & Réseaux</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="assoc-grid fade-in">
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-globe-africa"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Membre du Conseil Exécutif" data-en="Member of Executive Board">Membre du Conseil Exécutif</div>
+                    <div class="assoc-org" data-fr="Réseau Mondial des Géoparcs UNESCO — GGN" data-en="Global Geoparks Network — GGN">Réseau Mondial des Géoparcs UNESCO — GGN</div>
+                    <div class="assoc-date">2020 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-mountain"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Président" data-en="President">Président</div>
+                    <div class="assoc-org" data-fr="Association Géoparc M'Goun" data-en="M'Goun Geopark Association">Association Géoparc M'Goun</div>
+                    <div class="assoc-date">2019 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-leaf"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Secrétaire Général" data-en="Secretary General">Secrétaire Général</div>
+                    <div class="assoc-org" data-fr="Ass. Maroc Environnement et Développement Durable" data-en="Morocco Environment & Sustainable Dev. Assoc.">Ass. Maroc Environnement et Développement Durable</div>
+                    <div class="assoc-date">2016 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-tree"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Membre" data-en="Member">Membre</div>
+                    <div class="assoc-org" data-fr="Association Maroc, Nature et Culture" data-en="Morocco, Nature and Culture Association">Association Maroc, Nature et Culture</div>
+                    <div class="assoc-date">2018 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Membre" data-en="Member">Membre</div>
+                    <div class="assoc-org" data-fr="Ass. des Lauréats — Chaire UNESCO Environnement" data-en="Alumni Assoc. — UNESCO Chair Environment">Ass. des Lauréats — Chaire UNESCO Environnement</div>
+                    <div class="assoc-date">2018 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+            <div class="assoc-card">
+                <div class="assoc-icon"><i class="fas fa-hands-helping"></i></div>
+                <div>
+                    <div class="assoc-role" data-fr="Membre" data-en="Member">Membre</div>
+                    <div class="assoc-org" data-fr="Club UNESCO — Association Bouregreg" data-en="UNESCO Club — Bouregreg Association">Club UNESCO — Association Bouregreg</div>
+                    <div class="assoc-date">2019 — <span data-fr="Présent" data-en="Present">Présent</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag" data-fr="Photos & Missions" data-en="Photos & Missions">Photos & Missions</span>
+            <h2 class="section-title" data-fr="En Action" data-en="In Action">En Action</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle" style="color:rgba(255,255,255,0.55);" data-fr="Sur le terrain, lors de missions internationales et de réunions officielles" data-en="In the field, on international missions and official meetings">Sur le terrain, lors de missions internationales et de réunions officielles</p>
+        </div>
+        <div class="gallery-grid fade-in">
+
+            <!-- Photo 1 : driss3 - réunion officielle -->
+            <div class="gallery-card" onclick="openLightbox(0)">
+                <img src="driss3.jpeg" alt="Réunion officielle UNESCO">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag gold" data-fr="Officiel" data-en="Official">Officiel</div>
+                    <div class="gallery-caption" data-fr="Commission Nationale UNESCO" data-en="National UNESCO Commission">Commission Nationale UNESCO</div>
+                    <div class="gallery-subcaption" data-fr="Membre de la Commission Nationale — Maroc" data-en="Member of the National Commission — Morocco">Membre de la Commission Nationale — Maroc</div>
+                </div>
+                <div class="gallery-overlay-hover">
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+
+            <!-- Photo 2 : driss - terrain géosite Grèce -->
+            <div class="gallery-card" onclick="openLightbox(1)">
+                <img src="driss.jpeg" alt="Visite géosite Lesbos">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag" data-fr="Terrain" data-en="Field work">Terrain</div>
+                    <div class="gallery-caption" data-fr="Mission Géoparc — Grèce" data-en="Geopark Mission — Greece">Mission Géoparc — Grèce</div>
+                    <div class="gallery-subcaption" data-fr="Forêt Pétrifiée de Lesbos — Évaluation de site" data-en="Lesbos Petrified Forest — Site evaluation">Forêt Pétrifiée de Lesbos — Évaluation de site</div>
+                </div>
+                <div class="gallery-overlay-hover">
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+
+            <!-- Photo 3 : driss2 - mission UNESCO avec collègue -->
+            <div class="gallery-card" onclick="openLightbox(2)">
+                <img src="driss2.jpeg" alt="Mission UNESCO avec collègues">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag" data-fr="Mission UNESCO" data-en="UNESCO Mission">Mission UNESCO</div>
+                    <div class="gallery-caption" data-fr="Collaboration Internationale" data-en="International Collaboration">Collaboration Internationale</div>
+                    <div class="gallery-subcaption" data-fr="Évaluation de Géoparc — Réseau GGN UNESCO" data-en="Geopark Evaluation — UNESCO GGN Network">Évaluation de Géoparc — Réseau GGN UNESCO</div>
+                </div>
+                <div class="gallery-overlay-hover">
+                    <div class="gallery-zoom-icon"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Contact</span>
+            <h2 class="section-title" data-fr="Me Contacter" data-en="Get In Touch">Me Contacter</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle" data-fr="Pour toute collaboration, demande de renseignement ou partenariat international" data-en="For any collaboration, inquiry or international partnership">Pour toute collaboration, demande de renseignement ou partenariat international</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <h3 data-fr="Informations de Contact" data-en="Contact Information">Informations de Contact</h3>
+                <div class="contact-item">
+                    <div class="c-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <div class="c-label" data-fr="Téléphone" data-en="Phone">Téléphone</div>
+                        <div class="c-value"><a href="tel:+212661065920">+212 661 065920</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <div class="c-label">Email</div>
+                        <div class="c-value"><a href="mailto:dgs.rbk@gmail.com">dgs.rbk@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <div class="c-label" data-fr="Adresse" data-en="Address">Adresse</div>
+                        <div class="c-value">Rue de Rabat N°14<br>Béni Mellal, Maroc</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <div class="c-label">Site web</div>
+                        <div class="c-value"><a href="https://www.geoparc-mgoun.ma" target="_blank">www.geoparc-mgoun.ma</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-box fade-in">
+                <h4 data-fr="Envoyer un Message" data-en="Send a Message">Envoyer un Message</h4>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-fr="Nom complet" data-en="Full name">Nom complet</label>
+                            <input type="text" id="f-name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="f-email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="Objet" data-en="Subject">Objet</label>
+                        <input type="text" id="f-subject" placeholder="Objet de votre message" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="Message" data-en="Message">Message</label>
+                        <textarea id="f-msg" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2024 <strong>Driss ACHBAL</strong> &mdash; <span data-fr="Président du Réseau Africain des Géoparcs UNESCO" data-en="President of the African UNESCO Geoparks Network">Président du Réseau Africain des Géoparcs UNESCO</span></p>
+    <p style="margin-top: 0.4rem;">
+        <a href="https://www.geoparc-mgoun.ma" target="_blank">geoparc-mgoun.ma</a>
+        &nbsp;|&nbsp;
+        <a href="mailto:dgs.rbk@gmail.com">dgs.rbk@gmail.com</a>
+    </p>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+    // ===== Lightbox =====
+    const lbPhotos = [
+        { src: 'driss3.jpeg', caption: 'Commission Nationale UNESCO — Maroc' },
+        { src: 'driss.jpeg',  caption: 'Mission Géoparc — Forêt Pétrifiée de Lesbos, Grèce' },
+        { src: 'driss2.jpeg', caption: 'Collaboration Internationale — Réseau GGN UNESCO' },
+    ];
+    let lbIndex = 0;
+
+    function openLightbox(i) {
+        lbIndex = i;
+        const lb = document.getElementById('lightbox');
+        document.getElementById('lightboxImg').src = lbPhotos[i].src;
+        document.getElementById('lightboxCaption').textContent = lbPhotos[i].caption;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBg(e) {
+        if (e.target === document.getElementById('lightbox')) closeLightbox();
+    }
+
+    function navLightbox(dir) {
+        lbIndex = (lbIndex + dir + lbPhotos.length) % lbPhotos.length;
+        document.getElementById('lightboxImg').src = lbPhotos[lbIndex].src;
+        document.getElementById('lightboxCaption').textContent = lbPhotos[lbIndex].caption;
+    }
+
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navLightbox(1);
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+    });
+
+    // ===== Language toggle =====
+    let lang = 'fr';
+
+    function toggleLang() {
+        lang = lang === 'fr' ? 'en' : 'fr';
+        document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
+        document.documentElement.lang = lang;
+        applyLang();
+    }
+
+    function applyLang() {
+        // Elements with data-fr / data-en
+        document.querySelectorAll('[data-fr]').forEach(el => {
+            const txt = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            if (txt !== null) el.innerHTML = txt;
+        });
+        // Nav links
+        document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+            if (el.tagName === 'A' || el.tagName === 'SPAN') {
+                const txt = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+                if (txt !== null) el.textContent = txt;
+            }
+        });
+        // Placeholders
+        const phs = lang === 'fr'
+            ? ['Votre nom', 'votre@email.com', 'Objet de votre message', 'Votre message...']
+            : ['Your name', 'your@email.com', 'Subject of your message', 'Your message...'];
+        const ids = ['f-name', 'f-email', 'f-subject', 'f-msg'];
+        ids.forEach((id, i) => { const el = document.getElementById(id); if (el) el.placeholder = phs[i]; });
+    }
+
+    // ===== Navbar =====
+    window.addEventListener('scroll', () => {
+        document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // ===== Mobile nav =====
+    function toggleNav() {
+        document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // ===== Scroll spy =====
+    const allSections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        allSections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent-light)' : '';
+        });
+    });
+
+    // ===== Fade-in observer =====
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+    // ===== Form submit =====
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.innerHTML = '<i class="fas fa-check"></i> <span>' + (lang === 'fr' ? 'Message envoyé !' : 'Message sent!') + '</span>';
+        btn.style.background = 'linear-gradient(135deg, #27ae60, #1e8449)';
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> <span data-fr="Envoyer le message" data-en="Send message">' + (lang === 'fr' ? 'Envoyer le message' : 'Send message') + '</span>';
+            btn.style.background = '';
+            e.target.reset();
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
