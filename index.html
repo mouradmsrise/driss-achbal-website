@@ -1305,7 +1305,14 @@
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-visual { display: none; }
+            .hero-visual { display: flex; justify-content: center; order: -1; margin-bottom: 1.5rem; }
+            .hero-card {
+                max-width: 260px;
+                padding: 1.5rem 1.25rem;
+            }
+            .hero-card-badges { display: none; }
+            .hero-avatar { width: 100px; height: 100px; }
+            .hero-card-name { font-size: 1.1rem; }
             .hero-stats { justify-content: center; }
             .hero-buttons { justify-content: center; }
             .hero-title { border-left: none; padding-left: 0; border-top: 3px solid var(--accent); padding-top: 0.75rem; }
