@@ -2137,7 +2137,7 @@
         document.querySelectorAll('[data-fr][data-en]').forEach(el => {
             if (el.tagName === 'A' || el.tagName === 'SPAN') {
                 const txt = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-                if (txt !== null) el.textContent = txt;
+                if (txt !== null) el.innerHTML = txt;
             }
         });
         // Placeholders
